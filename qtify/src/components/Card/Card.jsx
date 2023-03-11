@@ -19,7 +19,7 @@ function Card({ cardImage, followers, title }) {
         </span>
       </div>
 
-      <p>{title}</p>
+      <p width={162}>{title}</p>
     </div>
   );
 }
