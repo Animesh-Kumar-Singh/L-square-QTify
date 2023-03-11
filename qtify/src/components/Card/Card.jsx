@@ -5,10 +5,17 @@ function Card({ cardImage, followers, title }) {
   return (
     <div className={styles.card}>
       <div className={styles.imageFollow}>
-        <img src={cardImage} alt="cardImage" />
+        <img
+          src={cardImage}
+          alt="cardImage"
+          loading="lazy"
+          object-fit="contain"
+          height={170}
+          width={159}
+        />
 
         <span className={styles.follow}>
-          <p className={styles.textSize}>{followers}</p>
+          <p className={styles.textSize}>{followers + " Follows"}</p>
         </span>
       </div>
 

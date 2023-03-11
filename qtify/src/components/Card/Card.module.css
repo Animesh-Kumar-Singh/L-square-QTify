@@ -5,9 +5,11 @@
 
   height: 232px;
   width: 159px;
+  border-radius: 10px;
 
-  background-color: var(--color-black);
   color: var(--color-white);
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .imageFollow {
@@ -25,7 +27,7 @@
   background: var(--color-black);
   border-radius: 10px;
 
-  width: 80px;
+  width: 98px;
   margin-left: 8px;
 
   display: flex;
