@@ -1,35 +1,20 @@
-import { React, useState, useEffect } from "react";
-import axios from "axios";
+import { React } from "react";
+import { fetchTopSongs } from "../components/api/api";
 import HeroSection from "../components/HeroSection/HeroSection";
 import Navbar from "../components/Navbar/Navbar";
-import Album from "../components/Album/Album";
+import Section from "../components/Section/Section";
+import styles from "./Home.module.css";
 
 function Home() {
-  const [cards, setCards] = useState(null);
-
-  let URL = "https://qtify-backend-gye4ebhsbpfea8g9.z01.azurefd.net/albums/top";
-
-  const getDataFromCardApi = async (url) => {
-    let data = await axios.get(url);
-
-    // console.log("data", data.data);
-    setCards(data.data);
-  };
-
-  useEffect(() => {
-    getDataFromCardApi(URL);
-  }, [URL]);
-
-  console.log("cards", cards);
-
   return (
-    <div>
+    <div className={styles.home}>
       <Navbar />
       <HeroSection
         text1="100 Thousand Songs, ad-free"
         text2="Over thousands podcast episodes"
       />
-      <Album albumData={cards} albumType={"Top Albums"} />
+
+      <Section albumType={"Top Albums"} dataSource={fetchTopSongs} />
     </div>
   );
 }

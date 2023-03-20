@@ -1,0 +1,10 @@
+.carouselNav {
+  position: absolute;
+  top: 35%;
+  left: 19px;
+  z-index: 5;
+  transform: translateX(-50%);
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}

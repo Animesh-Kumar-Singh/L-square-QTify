@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./Card.module.css";
 
-function Card({ cardImage, followers, title }) {
+function Card({ data, type }) {
+  const { id, title, follows, image, likes } = data;
+
   return (
     <div className={styles.card}>
       <div className={styles.imageFollow}>
         <img
-          src={cardImage}
+          src={image}
           alt="cardImage"
           loading="lazy"
           object-fit="contain"
@@ -15,7 +17,9 @@ function Card({ cardImage, followers, title }) {
         />
 
         <span className={styles.follow}>
-          <p className={styles.textSize}>{followers + " Follows"}</p>
+          <p className={styles.textSize}>
+            {type == "follows" ? follows : likes}
+          </p>
         </span>
       </div>
 
