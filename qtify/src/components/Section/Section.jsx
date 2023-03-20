@@ -33,6 +33,7 @@ export default function Section({ albumType, dataSource }) {
         </strong>
       </div>
       {isCollapse ? (
+       <div className={styles.line}>
         <div className={styles.albumcarousel}>
           {cards?.map((item) => {
             return (
@@ -52,6 +53,11 @@ export default function Section({ albumType, dataSource }) {
             );
           })}
         </div>
+
+        <div className={styles.horizontalLine}></div>
+
+       </div>
+        
       ) : (
         <div className={styles.carousel}>
           <Carousel

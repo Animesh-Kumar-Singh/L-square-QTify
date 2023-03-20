@@ -1,5 +1,5 @@
 import { React } from "react";
-import { fetchTopSongs } from "../components/api/api";
+import { fetchNewAlbums, fetchTopSongs } from "../components/api/api";
 import HeroSection from "../components/HeroSection/HeroSection";
 import Navbar from "../components/Navbar/Navbar";
 import Section from "../components/Section/Section";
@@ -15,6 +15,7 @@ function Home() {
       />
 
       <Section albumType={"Top Albums"} dataSource={fetchTopSongs} />
+      <Section albumType={"New Albums"} dataSource={fetchNewAlbums} />
     </div>
   );
 }

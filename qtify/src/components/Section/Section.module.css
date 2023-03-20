@@ -5,6 +5,7 @@
   gap: 18px; */
   padding: 0px 32px;
   color: var(--color-white);
+  margin-top: 19px;
 }
 
 .albumHeader {
@@ -30,4 +31,18 @@
 
 .carousel {
   margin-top: 18px;
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  
+}
+
+.horizontalLine{
+  width: 1440px;
+  height: 0px;
+  left: 0px;
+  border: 1px solid var(--color-primary);
 }

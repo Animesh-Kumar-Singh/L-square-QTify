@@ -13,3 +13,12 @@ export const fetchTopSongs = async () => {
     console.log("error", error);
   }
 };
+
+export const fetchNewAlbums = async () => {
+  try{
+    let res = await axios.get(`${BACKEND_URL}/albums/new`);
+    return res.data
+  }catch (error){
+    console.log("error from api new Albums",error)
+  }
+}
