@@ -1,5 +1,5 @@
 import { React } from "react";
-import { fetchNewAlbums, fetchTopSongs } from "../components/api/api";
+import { fetchFilters, fetchNewAlbums, fetchSongs, fetchTopSongs } from "../components/api/api";
 import HeroSection from "../components/HeroSection/HeroSection";
 import Navbar from "../components/Navbar/Navbar";
 import Section from "../components/Section/Section";
@@ -14,8 +14,12 @@ function Home() {
         text2="Over thousands podcast episodes"
       />
 
-      <Section albumType={"Top Albums"} dataSource={fetchTopSongs} />
-      <Section albumType={"New Albums"} dataSource={fetchNewAlbums} />
+      <Section albumType={"Top Albums"} dataSource={fetchTopSongs} appreciateThrough={"follows"} />
+      <div className={styles.divide}></div>
+      <Section albumType={"New Albums"} dataSource={fetchNewAlbums} appreciateThrough={"follows"} />
+      <div className={styles.divide}></div>
+      <Section albumType={"Songs"} dataSource={fetchSongs} appreciateThrough={"likes"} filterSource={fetchFilters} />
+      <div className={styles.divide}></div>
     </div>
   );
 }
